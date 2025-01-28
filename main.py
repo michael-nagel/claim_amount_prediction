@@ -318,7 +318,7 @@ ax.plot(history.history["val_loss"], label="Validation Loss")
 ax.set(xlabel="Epochs", ylabel="Loss", title="Training and Validation Loss")
 plt.xticks(np.arange(0, 25, 5))
 plt.legend()
-save_fig("nn_train_val_loss.pdf")
+save_fig("nn_train_val_loss")
 plt.show(block=False)
 
 # %% Predict Claim Amounts
@@ -562,7 +562,7 @@ print(
 _, ax = plt.subplots()
 xgb.plot_importance(best_xgb_reg, max_num_features=15, ax=ax)
 ax.set(title="Feature Importance XGBoost Regressor")
-save_fig("feat_import_xgboost_reg.pdf")
+save_fig("feat_import_xgboost_reg")
 plt.show(block=False)
 
 # %% 3. Final predictions
@@ -588,7 +588,7 @@ fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10, 5))
 sns.barplot(metrics_df["RMSE"].sort_values(), ax=ax[0])
 sns.barplot(metrics_df["R-Squared"].sort_values(ascending=False), ax=ax[1])
 fig.suptitle("Comparison of Performance Metrics")
-save_fig("comparison_metrics.pdf")
+save_fig("comparison_metrics")
 plt.show(block=False)
 
 # %% Predict Expected Claim Amount Per Year for Each Customer
